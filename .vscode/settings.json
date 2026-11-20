@@ -1,0 +1,38 @@
+{
+  // Taken from gamegine's .vscode/settings.json (branch main).
+  //
+  // The ruler is drawn after column 79, the ColumnLimit of .clang-format:
+  // a line may run up to the bar, never past it.
+  //
+  // Format on save runs clang-format alone, with .clang-format at the root.
+  // It undoes the BDE pass (// RETURN tags, banners, /// headings); run
+  // 'xmake format' to put them back. 'fallbackStyle: none' leaves a file
+  // alone if .clang-format cannot be read, rather than reformatting it to
+  // LLVM defaults: an unformatted file is obvious, a wrongly formatted one
+  // is not.
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.clang_format_style": "file",
+  "C_Cpp.clang_format_fallbackStyle": "none",
+  "[cpp]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.rulers": [
+      79
+    ]
+  },
+  "[c]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.rulers": [
+      79
+    ]
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "search.exclude": {
+    "**/build": true,
+    "**/.xmake": true
+  }
+}
