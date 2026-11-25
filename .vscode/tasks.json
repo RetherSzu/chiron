@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build active cpp (debug)",
+      "type": "shell",
+      "command": "mkdir -p \"${workspaceFolder}/build/debug\" && /usr/bin/clang++ -std=c++23 -g -O0 -Wall -Wextra \"${file}\" -o \"${workspaceFolder}/build/debug/${fileBasenameNoExtension}\"",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
