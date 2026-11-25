@@ -29,7 +29,7 @@
 /// - - - - - - - - - - - - - - - - - - - - - - - - -
 // Build in release mode (the default), then run:
 // ```
-//  xmake run 01 c1
+//  xmake run graphic 01 c1
 // ```
 
 // std

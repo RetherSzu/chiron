@@ -17,7 +17,7 @@
 ///Example 1: Losing No Increment
 /// - - - - - - - - - - - - - - -
 // ```
-//  xmake run 01 c2_atomic
+//  xmake run graphic 01 c2_atomic
 // ```
 
 // std

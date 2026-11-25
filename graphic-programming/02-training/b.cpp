@@ -52,7 +52,7 @@
 // ```
 // `main` runs this example:
 // ```
-//  xmake run 02 b
+//  xmake run graphic 02 b
 // ```
 
 // std

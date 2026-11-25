@@ -22,11 +22,11 @@
 /// - - - - - - - - - - - - - -
 // Run it a few times, and the result changes:
 // ```
-//  xmake run 01 c2
+//  xmake run graphic 01 c2
 // ```
 // ThreadSanitizer reports the race:
 // ```
-//  xmake f -m tsan && xmake run 01 c2
+//  xmake f -m tsan && xmake run graphic 01 c2
 // ```
 
 // std

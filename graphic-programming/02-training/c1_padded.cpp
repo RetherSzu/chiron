@@ -17,7 +17,7 @@
 /// - - - - - - - - - - - - - -
 // Build in release mode (the default), then run:
 // ```
-//  xmake run 02 c1_padded
+//  xmake run graphic 02 c1_padded
 // ```
 
 // std

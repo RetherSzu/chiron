@@ -19,7 +19,7 @@
 ///Example 1: Losing No Increment
 /// - - - - - - - - - - - - - - -
 // ```
-//  xmake run 01 c2_mutex
+//  xmake run graphic 01 c2_mutex
 // ```
 
 // std
