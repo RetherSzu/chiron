@@ -4,66 +4,38 @@
 #include <cstdint>
 #include <vector>
 #include <string>
-#include <utility>
 
 namespace {
-
-struct Node {
-    char                     d_color;
-    std::vector<std::size_t> d_childs;
-};
-
-std::pair<std::size_t, std::size_t>
-traversal(std::vector<Node>& nodes, std::size_t childIndex, std::size_t& ans)
-{
-    std::pair<std::size_t, std::size_t> bw = {0, 0};
-
-    if (nodes[childIndex].d_color == 'W') {
-        bw.first += 1;
-    } else {
-        bw.second += 1;
-    }
-
-    for (std::size_t i = 0; i < nodes[childIndex].d_childs.size(); ++i) {
-        std::pair<std::size_t, std::size_t> bwc = traversal(
-            nodes, nodes[childIndex].d_childs[i], ans);
-        bw.first += bwc.first;
-        bw.second += bwc.second;
-    }
-
-    if (bw.first == bw.second) {
-        ans++;
-    }
-
-    return bw;
-}
 
 void solve()
 {
     std::size_t n;
     std::cin >> n;
-    std::vector<Node> nodes(n);
+    std::vector<std::size_t> parent(n + 1);
 
-    for (std::size_t i = 0; i < n; ++i) {
-        nodes[i] = Node{.d_color = 'W', .d_childs = {}};
+    for (std::size_t i = 2; i <= n; ++i) {
+        std::cin >> parent[i];
     }
 
-    for (std::size_t i = 0; i < n - 1; ++i) {
-        std::size_t iNode;
-        std::cin >> iNode;
-        nodes[iNode - 1].d_childs.push_back(i + 1);
-    }
-
-    std::string colors;
-    std::cin >> colors;
-
-    for (std::size_t i = 0; i < n; ++i) {
-        nodes[i].d_color = colors[i];
+    std::string s;
+    std::cin >> s;
+    std::vector<int> bal(n + 1);
+    for (std::size_t i = 1; i <= n; ++i) {
+        bal[i] = (s[i - 1] == 'W') ? 1 : -1;
     }
 
     std::size_t ans = 0;
+    for (std::size_t i = n; i >= 2; --i) {
+        if (bal[i] == 0) {
+            ans++;
+        }
+        bal[parent[i]] += bal[i];
+    }
 
-    traversal(nodes, 0, ans);
+    if (bal[1] == 0) {
+        ans++;
+    }
+
     std::cout << ans << '\n';
 }
 
